@@ -29,28 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RollBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
             this.AddD4 = new System.Windows.Forms.Button();
             this.D4Amount = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.AddD6 = new System.Windows.Forms.Button();
+            this.D6Amount = new System.Windows.Forms.Label();
             this.ResetBtn = new System.Windows.Forms.Button();
+            this.DelD4 = new System.Windows.Forms.Button();
+            this.DelD6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // RollBtn
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Font = new System.Drawing.Font("RUSNeverwinter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.button1.Location = new System.Drawing.Point(90, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 48);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Стоп";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.RollBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.RollBtn.Font = new System.Drawing.Font("RUSNeverwinter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RollBtn.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.RollBtn.Location = new System.Drawing.Point(90, 12);
+            this.RollBtn.Name = "RollBtn";
+            this.RollBtn.Size = new System.Drawing.Size(92, 48);
+            this.RollBtn.TabIndex = 0;
+            this.RollBtn.Text = "Roll";
+            this.RollBtn.UseVisualStyleBackColor = false;
+            this.RollBtn.Click += new System.EventHandler(this.RollBtn_Click);
             // 
             // closeBtn
             // 
@@ -94,30 +96,30 @@
             this.D4Amount.TabIndex = 2;
             this.D4Amount.Text = "0";
             // 
-            // button2
+            // AddD6
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button2.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.button2.Location = new System.Drawing.Point(319, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 48);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "D4";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.AddDice);
+            this.AddD6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.AddD6.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AddD6.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddD6.Location = new System.Drawing.Point(319, 12);
+            this.AddD6.Name = "AddD6";
+            this.AddD6.Size = new System.Drawing.Size(92, 48);
+            this.AddD6.TabIndex = 0;
+            this.AddD6.Text = "D6";
+            this.AddD6.UseVisualStyleBackColor = false;
+            this.AddD6.Click += new System.EventHandler(this.AddDice);
             // 
-            // label1
+            // D6Amount
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label1.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(319, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 37);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "0";
+            this.D6Amount.AutoSize = true;
+            this.D6Amount.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.D6Amount.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.D6Amount.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.D6Amount.Location = new System.Drawing.Point(319, 63);
+            this.D6Amount.Name = "D6Amount";
+            this.D6Amount.Size = new System.Drawing.Size(32, 37);
+            this.D6Amount.TabIndex = 2;
+            this.D6Amount.Text = "0";
             // 
             // ResetBtn
             // 
@@ -132,18 +134,52 @@
             this.ResetBtn.UseVisualStyleBackColor = false;
             this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
+            // DelD4
+            // 
+            this.DelD4.BackColor = System.Drawing.Color.Peru;
+            this.DelD4.Font = new System.Drawing.Font("RUSNeverwinter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DelD4.ForeColor = System.Drawing.SystemColors.Info;
+            this.DelD4.Location = new System.Drawing.Point(240, 63);
+            this.DelD4.Name = "DelD4";
+            this.DelD4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.DelD4.Size = new System.Drawing.Size(55, 40);
+            this.DelD4.TabIndex = 0;
+            this.DelD4.Text = "— ";
+            this.DelD4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.DelD4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.DelD4.UseVisualStyleBackColor = false;
+            this.DelD4.Click += new System.EventHandler(this.RemoveDice);
+            // 
+            // DelD6
+            // 
+            this.DelD6.BackColor = System.Drawing.Color.Peru;
+            this.DelD6.Font = new System.Drawing.Font("RUSNeverwinter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DelD6.ForeColor = System.Drawing.SystemColors.Info;
+            this.DelD6.Location = new System.Drawing.Point(357, 63);
+            this.DelD6.Name = "DelD6";
+            this.DelD6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.DelD6.Size = new System.Drawing.Size(55, 40);
+            this.DelD6.TabIndex = 0;
+            this.DelD6.Text = "— ";
+            this.DelD6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.DelD6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.DelD6.UseVisualStyleBackColor = false;
+            this.DelD6.Click += new System.EventHandler(this.RemoveDice);
+            // 
             // RollerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DelD6);
+            this.Controls.Add(this.DelD4);
             this.Controls.Add(this.ResetBtn);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.D6Amount);
+            this.Controls.Add(this.AddD6);
             this.Controls.Add(this.D4Amount);
             this.Controls.Add(this.AddD4);
             this.Controls.Add(this.closeBtn);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RollBtn);
             this.Name = "RollerWindow";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -156,14 +192,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RollBtn;
         private System.Windows.Forms.Button closeBtn;
         internal System.Windows.Forms.Timer mainTimer;
         private System.Windows.Forms.Button AddD4;
         private System.Windows.Forms.Label D4Amount;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button AddD6;
+        private System.Windows.Forms.Label D6Amount;
         private System.Windows.Forms.Button ResetBtn;
+        private System.Windows.Forms.Button DelD4;
+        private System.Windows.Forms.Button DelD6;
     }
 }
 

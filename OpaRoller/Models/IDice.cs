@@ -12,7 +12,7 @@ namespace OpaRoller.Models
         //Drawable
         public int X { get; set; }
         public int Y { get; set; }
-        public Image Texture { get; set; }
+        public Image Texture { get; }
         public int Number { get; set; }
         
     }
