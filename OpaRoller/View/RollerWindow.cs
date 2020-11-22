@@ -28,9 +28,14 @@ namespace OpaRoller
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void closeBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void mainTimer_Tick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

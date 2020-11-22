@@ -4,8 +4,8 @@ using System.Text;
 
 namespace OpaRoller.Models
 {
-    public class Dice
+    public interface IDice
     {
-        public readonly int EdgesCount;
+       public int EdgesCount { get; }
     }
 }
