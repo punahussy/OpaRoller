@@ -1,6 +1,8 @@
 ﻿using OpaRoller.Models;
+using OpaRoller.View;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace OpaRoller.Controllers
@@ -9,7 +11,7 @@ namespace OpaRoller.Controllers
     {
         public static readonly object RndSync = new object();
 
-        public static int[] Roll(int quantity, IDice dice)
+        private static int[] Roll(int quantity, IDice dice)
         {
             Random rnd = new Random();
             int[] result = new int[quantity];
@@ -21,6 +23,14 @@ namespace OpaRoller.Controllers
                 }
             }
             return result;
+        }
+
+        public static void Roll(Scene scene)
+        {
+            foreach(var diceType in scene.Dices.Keys)
+            {
+                var currentRoll = Roll(scene.Dices[diceType].Count, scene.Dices[diceType].FirstOrDefault());
+            }
         }
     }
 }
