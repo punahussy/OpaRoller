@@ -1,26 +1,23 @@
-﻿using OpaRoller.Resources;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
 namespace OpaRoller.Models
 {
-    public class D8 : IDice
+    public class D12 : IDice
     {
         public int EdgesCount => Edges;
-        private const int Edges = 8;
+        private const int Edges = 12;
 
         public int X { get; set; }
         public int Y { get; set; }
-
         public Image Texture { get; set; }
-
         public int Number { get; set; }
 
-        public D8()
+        public D12()
         {
-            Texture = Resources.Textures.D8;
+            Texture = Resources.Textures.D12;
         }
     }
 }

@@ -42,6 +42,12 @@
             this.AddD20 = new System.Windows.Forms.Button();
             this.D20Amount = new System.Windows.Forms.Label();
             this.DelD20 = new System.Windows.Forms.Button();
+            this.AddD8 = new System.Windows.Forms.Button();
+            this.D8Amount = new System.Windows.Forms.Label();
+            this.DelD8 = new System.Windows.Forms.Button();
+            this.DelD12 = new System.Windows.Forms.Button();
+            this.D12Amount = new System.Windows.Forms.Label();
+            this.AddD12 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // RollBtn
@@ -174,7 +180,7 @@
             this.AddD20.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.AddD20.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddD20.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.AddD20.Location = new System.Drawing.Point(567, 12);
+            this.AddD20.Location = new System.Drawing.Point(672, 12);
             this.AddD20.Name = "AddD20";
             this.AddD20.Size = new System.Drawing.Size(92, 48);
             this.AddD20.TabIndex = 0;
@@ -188,7 +194,7 @@
             this.D20Amount.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.D20Amount.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.D20Amount.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.D20Amount.Location = new System.Drawing.Point(567, 63);
+            this.D20Amount.Location = new System.Drawing.Point(672, 63);
             this.D20Amount.Name = "D20Amount";
             this.D20Amount.Size = new System.Drawing.Size(32, 37);
             this.D20Amount.TabIndex = 2;
@@ -199,7 +205,7 @@
             this.DelD20.BackColor = System.Drawing.Color.Peru;
             this.DelD20.Font = new System.Drawing.Font("RUSNeverwinter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DelD20.ForeColor = System.Drawing.SystemColors.Info;
-            this.DelD20.Location = new System.Drawing.Point(605, 63);
+            this.DelD20.Location = new System.Drawing.Point(710, 63);
             this.DelD20.Name = "DelD20";
             this.DelD20.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.DelD20.Size = new System.Drawing.Size(55, 40);
@@ -210,11 +216,99 @@
             this.DelD20.UseVisualStyleBackColor = false;
             this.DelD20.Click += new System.EventHandler(this.RemoveDice);
             // 
+            // AddD8
+            // 
+            this.AddD8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.AddD8.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AddD8.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddD8.Location = new System.Drawing.Point(435, 12);
+            this.AddD8.Name = "AddD8";
+            this.AddD8.Size = new System.Drawing.Size(92, 48);
+            this.AddD8.TabIndex = 0;
+            this.AddD8.Text = "D8";
+            this.AddD8.UseVisualStyleBackColor = false;
+            this.AddD8.Click += new System.EventHandler(this.AddDice);
+            // 
+            // D8Amount
+            // 
+            this.D8Amount.AutoSize = true;
+            this.D8Amount.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.D8Amount.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.D8Amount.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.D8Amount.Location = new System.Drawing.Point(435, 63);
+            this.D8Amount.Name = "D8Amount";
+            this.D8Amount.Size = new System.Drawing.Size(32, 37);
+            this.D8Amount.TabIndex = 2;
+            this.D8Amount.Text = "0";
+            // 
+            // DelD8
+            // 
+            this.DelD8.BackColor = System.Drawing.Color.Peru;
+            this.DelD8.Font = new System.Drawing.Font("RUSNeverwinter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DelD8.ForeColor = System.Drawing.SystemColors.Info;
+            this.DelD8.Location = new System.Drawing.Point(473, 63);
+            this.DelD8.Name = "DelD8";
+            this.DelD8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.DelD8.Size = new System.Drawing.Size(55, 40);
+            this.DelD8.TabIndex = 0;
+            this.DelD8.Text = "— ";
+            this.DelD8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.DelD8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.DelD8.UseVisualStyleBackColor = false;
+            this.DelD8.Click += new System.EventHandler(this.RemoveDice);
+            // 
+            // DelD12
+            // 
+            this.DelD12.BackColor = System.Drawing.Color.Peru;
+            this.DelD12.Font = new System.Drawing.Font("RUSNeverwinter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DelD12.ForeColor = System.Drawing.SystemColors.Info;
+            this.DelD12.Location = new System.Drawing.Point(591, 63);
+            this.DelD12.Name = "DelD12";
+            this.DelD12.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.DelD12.Size = new System.Drawing.Size(55, 40);
+            this.DelD12.TabIndex = 0;
+            this.DelD12.Text = "— ";
+            this.DelD12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.DelD12.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.DelD12.UseVisualStyleBackColor = false;
+            this.DelD12.Click += new System.EventHandler(this.RemoveDice);
+            // 
+            // D12Amount
+            // 
+            this.D12Amount.AutoSize = true;
+            this.D12Amount.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.D12Amount.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.D12Amount.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.D12Amount.Location = new System.Drawing.Point(553, 63);
+            this.D12Amount.Name = "D12Amount";
+            this.D12Amount.Size = new System.Drawing.Size(32, 37);
+            this.D12Amount.TabIndex = 2;
+            this.D12Amount.Text = "0";
+            // 
+            // AddD12
+            // 
+            this.AddD12.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.AddD12.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AddD12.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddD12.Location = new System.Drawing.Point(553, 12);
+            this.AddD12.Name = "AddD12";
+            this.AddD12.Size = new System.Drawing.Size(92, 48);
+            this.AddD12.TabIndex = 0;
+            this.AddD12.Text = "D12";
+            this.AddD12.UseVisualStyleBackColor = false;
+            this.AddD12.Click += new System.EventHandler(this.AddDice);
+            // 
             // RollerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AddD12);
+            this.Controls.Add(this.D12Amount);
+            this.Controls.Add(this.DelD12);
+            this.Controls.Add(this.DelD8);
+            this.Controls.Add(this.D8Amount);
+            this.Controls.Add(this.AddD8);
             this.Controls.Add(this.DelD20);
             this.Controls.Add(this.D20Amount);
             this.Controls.Add(this.AddD20);
@@ -252,6 +346,12 @@
         private System.Windows.Forms.Button AddD20;
         private System.Windows.Forms.Label D20Amount;
         private System.Windows.Forms.Button DelD20;
+        private System.Windows.Forms.Button AddD8;
+        private System.Windows.Forms.Label D8Amount;
+        private System.Windows.Forms.Button DelD8;
+        private System.Windows.Forms.Button DelD12;
+        private System.Windows.Forms.Label D12Amount;
+        private System.Windows.Forms.Button AddD12;
     }
 }
 

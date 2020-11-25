@@ -56,6 +56,8 @@ namespace OpaRoller
         {
             D4Amount.Text = $"{scene.Dices["D4"].Count}";
             D6Amount.Text = $"{scene.Dices["D6"].Count}";
+            D8Amount.Text = $"{scene.Dices["D8"].Count}";
+            D12Amount.Text = $"{scene.Dices["D12"].Count}";
             D20Amount.Text = $"{scene.Dices["D20"].Count}";
             if (Drawables.Count > 0 && Rotate)
             {
@@ -106,6 +108,12 @@ namespace OpaRoller
                     case "AddD20":
                         scene.Dices["D20"].Push(new D20());
                         break;
+                    case "AddD8":
+                        scene.Dices["D8"].Push(new D8());
+                        break;
+                    case "AddD12":
+                        scene.Dices["D12"].Push(new D12());
+                        break;
                 }
             }
         }
@@ -127,6 +135,14 @@ namespace OpaRoller
                     case "DelD20":
                         if (scene.Dices["D20"].Count > 0)
                             scene.Dices["D20"].Pop();
+                        break;
+                    case "DelD8":
+                        if (scene.Dices["D8"].Count > 0)
+                            scene.Dices["D8"].Pop();
+                        break;
+                    case "DelD12":
+                        if (scene.Dices["D12"].Count > 0)
+                            scene.Dices["D12"].Pop();
                         break;
                 }
             }
