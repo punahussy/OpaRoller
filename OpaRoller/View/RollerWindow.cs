@@ -3,35 +3,42 @@ using OpaRoller.View;
 using OpaRoller.Controllers;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OpaRoller
 {
     public partial class RollerWindow : Form
     {
-        D4 d4 = new D4();
         Scene scene = new Scene();
         List<IDice> Drawables = new List<IDice>();
+        bool Rotate = false;
+        int RotateTimer = 0;
+        int RotateAnimDuration = 1; //seconds
+        bool DisplayText = false;
 
         Font NumberFont = new Font("Arial", 16, FontStyle.Bold, GraphicsUnit.Point);
-        TextFormatFlags flags = TextFormatFlags.HorizontalCenter |
-            TextFormatFlags.VerticalCenter | TextFormatFlags.Bottom;
+        TextFormatFlags TextFlags = TextFormatFlags.HorizontalCenter |
+            TextFormatFlags.VerticalCenter;
+        
 
 
         public RollerWindow()
         {
             InitializeComponent();
+
+            //Устранение мерцания
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.UserPaint, true);
+            UpdateStyles();
+
             WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;
             AllowTransparency = true;
             BackColor = Color.AliceBlue;//цвет фона  
-            TransparencyKey = this.BackColor;//он же будет заменен на прозрачный цвет
+            TransparencyKey = BackColor;//он же будет заменен на прозрачный цвет
             
         }
 
@@ -49,6 +56,21 @@ namespace OpaRoller
         {
             D4Amount.Text = $"{scene.Dices["D4"].Count}";
             D6Amount.Text = $"{scene.Dices["D6"].Count}";
+            D20Amount.Text = $"{scene.Dices["D20"].Count}";
+            if (Drawables.Count > 0 && Rotate)
+            {
+                RotateTimer++;    
+                foreach (var dice in Drawables)
+                {
+                    dice.Texture.RotateFlip(RotateFlipType.Rotate270FlipNone);
+                }
+                if ((1000 / mainTimer.Interval) * RotateAnimDuration < RotateTimer)
+                {
+                    RotateTimer = 0;
+                    Rotate = false;
+                    DisplayText = true;
+                }
+            }
             Refresh();
         }
 
@@ -62,13 +84,11 @@ namespace OpaRoller
                     Rectangle diceRect = new Rectangle(dice.X, dice.Y, 128, 128);
                     g.DrawImage(dice.Texture, Rectangle.Round(diceRect));
 
-                    TextRenderer.DrawText(g, dice.Number.ToString(), 
-                        NumberFont, diceRect, Color.Black, Color.Transparent, flags);
+                    if (DisplayText)
+                        TextRenderer.DrawText(g, dice.Number.ToString(), 
+                            NumberFont, diceRect, Color.Black, Color.Transparent, TextFlags);
                 }
             }
-            //string Number = "4";
-
-
         }
 
         private void AddDice(object sender, EventArgs e)
@@ -82,6 +102,9 @@ namespace OpaRoller
                         break;
                     case "AddD6":
                         scene.Dices["D6"].Push(new D6());
+                        break;
+                    case "AddD20":
+                        scene.Dices["D20"].Push(new D20());
                         break;
                 }
             }
@@ -101,6 +124,10 @@ namespace OpaRoller
                         if (scene.Dices["D6"].Count > 0)
                             scene.Dices["D6"].Pop();
                         break;
+                    case "DelD20":
+                        if (scene.Dices["D20"].Count > 0)
+                            scene.Dices["D20"].Pop();
+                        break;
                 }
             }
         }
@@ -112,11 +139,11 @@ namespace OpaRoller
 
         private void RollBtn_Click(object sender, EventArgs e)
         {
+            DisplayText = false;
             Roller.Roll(scene);
             Drawables = scene.Dices.Values.SelectMany(d => d).ToList();
             Roller.Throw(this, Drawables);
-            int a;
-            a = 3;
+            Rotate = true;
         }
     }
 }

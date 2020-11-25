@@ -13,9 +13,14 @@ namespace OpaRoller.Models
         public int X { get; set; }
         public int Y { get; set; }
 
-        public Image Texture => Textures.D4;
+        public Image Texture { get; set; }
+        public D4()
+        {
+            Texture = Textures.D4;
+        }
         public int Number { get; set; }
 
         private const int Edges = 4;
+
     }
 }

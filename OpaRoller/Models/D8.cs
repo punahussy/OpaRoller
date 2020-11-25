@@ -6,20 +6,16 @@ using System.Text;
 
 namespace OpaRoller.Models
 {
-    public class D6 : IDice
+    public class D8 : IDice
     {
         public int EdgesCount => Edges;
+        private const int Edges = 8;
 
         public int X { get; set; }
         public int Y { get; set; }
 
         public Image Texture { get; set; }
-        public D6()
-        {
-            Texture = Textures.D6;
-        }
-        public int Number { get; set; }
 
-        private const int Edges = 6;
+        public int Number { get; set; }
     }
 }

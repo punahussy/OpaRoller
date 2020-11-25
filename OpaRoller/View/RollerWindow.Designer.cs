@@ -39,6 +39,9 @@
             this.ResetBtn = new System.Windows.Forms.Button();
             this.DelD4 = new System.Windows.Forms.Button();
             this.DelD6 = new System.Windows.Forms.Button();
+            this.AddD20 = new System.Windows.Forms.Button();
+            this.D20Amount = new System.Windows.Forms.Label();
+            this.DelD20 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // RollBtn
@@ -166,11 +169,55 @@
             this.DelD6.UseVisualStyleBackColor = false;
             this.DelD6.Click += new System.EventHandler(this.RemoveDice);
             // 
+            // AddD20
+            // 
+            this.AddD20.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.AddD20.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AddD20.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.AddD20.Location = new System.Drawing.Point(567, 12);
+            this.AddD20.Name = "AddD20";
+            this.AddD20.Size = new System.Drawing.Size(92, 48);
+            this.AddD20.TabIndex = 0;
+            this.AddD20.Text = "D20";
+            this.AddD20.UseVisualStyleBackColor = false;
+            this.AddD20.Click += new System.EventHandler(this.AddDice);
+            // 
+            // D20Amount
+            // 
+            this.D20Amount.AutoSize = true;
+            this.D20Amount.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.D20Amount.Font = new System.Drawing.Font("Curlz MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.D20Amount.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.D20Amount.Location = new System.Drawing.Point(567, 63);
+            this.D20Amount.Name = "D20Amount";
+            this.D20Amount.Size = new System.Drawing.Size(32, 37);
+            this.D20Amount.TabIndex = 2;
+            this.D20Amount.Text = "0";
+            // 
+            // DelD20
+            // 
+            this.DelD20.BackColor = System.Drawing.Color.Peru;
+            this.DelD20.Font = new System.Drawing.Font("RUSNeverwinter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DelD20.ForeColor = System.Drawing.SystemColors.Info;
+            this.DelD20.Location = new System.Drawing.Point(605, 63);
+            this.DelD20.Name = "DelD20";
+            this.DelD20.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.DelD20.Size = new System.Drawing.Size(55, 40);
+            this.DelD20.TabIndex = 0;
+            this.DelD20.Text = "— ";
+            this.DelD20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.DelD20.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.DelD20.UseVisualStyleBackColor = false;
+            this.DelD20.Click += new System.EventHandler(this.RemoveDice);
+            // 
             // RollerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DelD20);
+            this.Controls.Add(this.D20Amount);
+            this.Controls.Add(this.AddD20);
             this.Controls.Add(this.DelD6);
             this.Controls.Add(this.DelD4);
             this.Controls.Add(this.ResetBtn);
@@ -202,6 +249,9 @@
         private System.Windows.Forms.Button ResetBtn;
         private System.Windows.Forms.Button DelD4;
         private System.Windows.Forms.Button DelD6;
+        private System.Windows.Forms.Button AddD20;
+        private System.Windows.Forms.Label D20Amount;
+        private System.Windows.Forms.Button DelD20;
     }
 }
 

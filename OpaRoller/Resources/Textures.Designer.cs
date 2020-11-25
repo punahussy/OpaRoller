@@ -63,6 +63,16 @@ namespace OpaRoller.Resources {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap D20 {
+            get {
+                object obj = ResourceManager.GetObject("D20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap D4 {
             get {
                 object obj = ResourceManager.GetObject("D4", resourceCulture);
