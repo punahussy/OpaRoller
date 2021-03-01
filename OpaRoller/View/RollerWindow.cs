@@ -39,6 +39,7 @@ namespace OpaRoller
             AllowTransparency = true;
             BackColor = Color.Green;//цвет фона  
             TransparencyKey = BackColor;//он же будет заменен на прозрачный цвет
+            TopMost = true;
             
         }
 
