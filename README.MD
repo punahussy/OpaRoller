@@ -11,7 +11,7 @@ OpaRoller представляет Гейм-Мастеру новые возмо
 
 
 ### Simple Table RPGs Dice Rolling Program
-OpaRoller introduces a simple solution in randomization and gameplay visualization for every Game Master
+OpaRoller introduces a simple solution in randomization and gameplay visualization for every Game Master.
 Roll the dices anywhere on your screen, maintaing complete control of everything that happens underneath!
 
 * Roll any number of dices without worrying about the validity of random generation
