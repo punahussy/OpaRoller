@@ -37,7 +37,7 @@ namespace OpaRoller
             WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;
             AllowTransparency = true;
-            BackColor = Color.AliceBlue;//цвет фона  
+            BackColor = Color.Green;//цвет фона  
             TransparencyKey = BackColor;//он же будет заменен на прозрачный цвет
             
         }
@@ -160,6 +160,12 @@ namespace OpaRoller
             Drawables = scene.Dices.Values.SelectMany(d => d).ToList();
             Roller.Throw(this, Drawables);
             Rotate = true;
+        }
+
+        private void show_frame_btn_Click(object sender, EventArgs e)
+        {
+            FormBorderStyle = FormBorderStyle == FormBorderStyle.None 
+                ? FormBorderStyle.Sizable : FormBorderStyle.None;
         }
     }
 }

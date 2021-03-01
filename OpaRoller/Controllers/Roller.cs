@@ -48,8 +48,8 @@ namespace OpaRoller.Controllers
             {
                 lock (RndSync)
                 {
-                    dice.X = rnd.Next(1, (int)(form.Width * 0.8));
-                    dice.Y = rnd.Next(128, (int)(form.Height * 0.8));
+                    dice.X = rnd.Next(1, (int)(form.ClientSize.Width * 0.8));
+                    dice.Y = rnd.Next(128, (int)(form.ClientSize.Height * 0.8));
                 }
             }
         }
