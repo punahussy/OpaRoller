@@ -306,7 +306,7 @@
             this.show_frame_btn.Name = "show_frame_btn";
             this.show_frame_btn.Size = new System.Drawing.Size(72, 48);
             this.show_frame_btn.TabIndex = 3;
-            this.show_frame_btn.Text = "Рамка";
+            this.show_frame_btn.Text = "Frame";
             this.show_frame_btn.UseVisualStyleBackColor = false;
             this.show_frame_btn.Click += new System.EventHandler(this.show_frame_btn_Click);
             // 
